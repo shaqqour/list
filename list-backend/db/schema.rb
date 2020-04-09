@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_230547) do
+ActiveRecord::Schema.define(version: 2020_04_09_202955) do
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
-    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
