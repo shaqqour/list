@@ -40,3 +40,122 @@ Migrating to CreateLists (20200409202955)
   [1m[35m (64.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Create (0.7ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Home"], ["created_at", "2020-04-09 20:34:06.356352"], ["updated_at", "2020-04-09 20:34:06.356352"]]
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-04-09 13:35:54 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/shaqqour/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/shaqqour/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.7ms | Allocations: 482)
+Completed 200 OK in 68ms (Views: 37.1ms | ActiveRecord: 0.0ms | Allocations: 2625)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-04-09 13:35:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/lists" for ::1 at 2020-04-09 13:36:01 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 4434)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 13:39:09 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 760)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 13:39:12 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 763)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 13:39:13 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 778)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 13:41:45 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 4358)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 13:42:19 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 777)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 13:42:20 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 777)
+
+
+Started GET "/lists" for ::1 at 2020-04-09 14:07:22 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 786)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20200409211937)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20200409212600)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "status" varchar, "priority" varchar, "due_date" datetime, "list_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_86a294a765"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_items_on_list_id" ON "items" ("list_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200409212600"]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
