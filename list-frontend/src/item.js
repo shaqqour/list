@@ -1,5 +1,6 @@
 class Item {
     constructor(attributes) {
+        this.id = attributes.id;
         this.name = attributes.name;
         this.status = attributes.status;
         this.priority = attributes.priority;

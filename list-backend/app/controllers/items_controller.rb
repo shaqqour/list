@@ -3,7 +3,12 @@ class ItemsController < ApplicationController
     def create
         list = List.find_by(id: params[:list_id])
         item = list.items.create(item_params)
-        
+        render json: item.to_json
+    end
+
+    def destroy
+        item = Item.find_by(id: params[:id])
+        item.delete
         render json: item.to_json
     end
     

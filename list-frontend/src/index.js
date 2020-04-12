@@ -75,7 +75,10 @@ function addItem(item) {
     deleteButton.className = "delete";
     deleteButton.type = "submit";
     deleteButton.innerHTML = "Delete";
-    deleteButton.addEventListener("click", deleteItem);
+    deleteButton.addEventListener("click", function(e){
+        deleteItem(item);
+        e.target.parentElement.remove();
+    });
 
     li.innerHTML = item.name;
     li.appendChild(deleteButton);
@@ -105,12 +108,14 @@ function UpdateList(item) {
     .then(response => response.json())
     .then(function(jsonItem){
         if (jsonItem.id) {
-            addItem(jsonItem);
+            let item = new Item(jsonItem)
+            addItem(item);
         }
     });
 }
 
-function deleteItem(e) {
-    console.log(e);
-    e.target.parentElement.remove();
+function deleteItem(item) {
+    let configObj = { method: "DELETE" };
+    console.log(item);
+    fetch(ITEMS_URL + "/" + item.id, configObj);
 }
