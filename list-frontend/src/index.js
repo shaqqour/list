@@ -2,9 +2,27 @@ const BASE_URL = "http://localhost:3000";
 const LISTS_URL = `${BASE_URL}/lists`;
 const ITEMS_URL = `${BASE_URL}/items`;
 
-const main = document.getElementsByTagName("main")[0];
+const span = document.getElementsByTagName("span")[0];
+const body = document.getElementsByTagName("body")[0];
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    //Create a new list
+    const form = document.createElement("form");
+    const newListTextfield = document.createElement("input");
+    newListTextfield.type = "text";
+    form.appendChild(newListTextfield);
+    span.appendChild(form);
+    const createNewListButton = document.createElement("button");
+    createNewListButton.type = "submit";
+    createNewListButton.innerHTML = "Create List";
+    createNewListButton.addEventListener("click", function(e){
+        if (newListTextfield.value.length > 0) {
+            addNewList(newListTextfield.value);
+        }
+    });
+    form.appendChild(createNewListButton)
+    
     fetch(LISTS_URL)
     .then(response => response.json())
     .then(json => render(json));
@@ -21,6 +39,9 @@ function render(jsonObject) {
 
 function addInfo(list) {
 
+    const main = document.createElement("main");
+    body.appendChild(main);
+
     //create container
     const div = document.createElement("div");
     div.className = "list";
@@ -34,9 +55,9 @@ function addInfo(list) {
 
     //add textfield and button to add to the list
     const form = document.createElement("form");
-    const textfield = document.createElement("input");
-    textfield.type = "text";
-    form.appendChild(textfield);
+    const newItemTextfield = document.createElement("input");
+    newItemTextfield.type = "text";
+    form.appendChild(newItemTextfield);
     div.appendChild(form);
     const addButton = document.createElement("button");
     addButton.type = "submit";
@@ -44,8 +65,8 @@ function addInfo(list) {
     form.appendChild(addButton)
     
     addButton.addEventListener("click", function (e) {
-        if (textfield.value.length > 0) {
-            let item = list.createItem(textfield.value);
+        if (newItemTextfield.value.length > 0) {
+            let item = list.createItem(newItemTextfield.value);
             UpdateList(item);
         }
     });
@@ -118,4 +139,27 @@ function deleteItem(item) {
     let configObj = { method: "DELETE" };
     console.log(item);
     fetch(ITEMS_URL + "/" + item.id, configObj);
+}
+
+function addNewList(name) {
+    let formData = {
+        "name": name
+    };
+    let configObj = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+    };
+
+    fetch(LISTS_URL, configObj)
+    .then(response => response.json())
+    .then(function (jsonList) {
+        if (jsonList.id) {
+            let list = new List(jsonList);
+                addInfo(list);
+        }
+    });
 }
