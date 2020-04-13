@@ -6784,3 +6784,1045 @@ Processing by ItemsController#destroy as */*
 Completed 200 OK in 88ms (Views: 0.3ms | ActiveRecord: 79.3ms | Allocations: 2381)
 
 
+Started GET "/lists" for ::1 at 2020-04-12 17:59:02 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 3]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 3484)
+
+
+Started GET "/lists" for ::1 at 2020-04-12 17:59:45 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 3]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 3486)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 08:40:14 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (16.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (15.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 3]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 174ms (Views: 94.6ms | ActiveRecord: 36.7ms | Allocations: 20172)
+
+
+Started DELETE "/items/34" for ::1 at 2020-04-13 08:40:36 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"34"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (95.0ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 34]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 105ms (Views: 0.3ms | ActiveRecord: 95.5ms | Allocations: 2582)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists"[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Destroy (119.1ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 3]]
+Started GET "/lists" for ::1 at 2020-04-13 08:41:40 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 2266)
+
+
+Started POST "/lists" for ::1 at 2020-04-13 08:48:06 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#create as JSON
+  Parameters: {"name"=>"Clean cat", "list"=>{"name"=>"Clean cat"}}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "Clean cat"], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[36mList Create (1.3ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Clean cat"], ["created_at", "2020-04-13 15:48:06.184574"], ["updated_at", "2020-04-13 15:48:06.184574"]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (86.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 5]]
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 08:48:06 -0700
+Completed 200 OK in 102ms (Views: 4.1ms | ActiveRecord: 88.6ms | Allocations: 6060)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 5]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 1.0ms | Allocations: 3444)
+
+
+Started POST "/items" for ::1 at 2020-04-13 08:48:17 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"Clean cat", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1, "item"=>{"name"=>"Clean cat", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1}}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Clean cat"], ["status", "to_do"], ["list_id", 1], ["created_at", "2020-04-13 15:48:17.170973"], ["updated_at", "2020-04-13 15:48:17.170973"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (93.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/lists" for ::1 at 2020-04-13 08:48:17 -0700
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 114ms (Views: 0.4ms | ActiveRecord: 94.7ms | Allocations: 5333)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 5]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 1.0ms | Allocations: 3553)
+
+
+Started DELETE "/items/35" for ::1 at 2020-04-13 08:48:24 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"35"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (114.0ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 35]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 120ms (Views: 0.2ms | ActiveRecord: 114.4ms | Allocations: 2417)
+
+
+Started POST "/items" for ::1 at 2020-04-13 08:48:39 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"Clean car", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>5, "item"=>{"name"=>"Clean car", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>5}}
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Clean car"], ["status", "to_do"], ["list_id", 5], ["created_at", "2020-04-13 15:48:39.450445"], ["updated_at", "2020-04-13 15:48:39.450445"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (111.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 08:48:39 -0700
+Completed 200 OK in 127ms (Views: 0.1ms | ActiveRecord: 112.6ms | Allocations: 5076)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 5]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.6ms | Allocations: 3549)
+
+
+Started DELETE "/items/10" for ::1 at 2020-04-13 08:57:48 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (80.2ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 87ms (Views: 0.2ms | ActiveRecord: 80.5ms | Allocations: 1218)
+
+
+Started DELETE "/items/36" for ::1 at 2020-04-13 08:58:22 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"36"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (100.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 36]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 109ms (Views: 0.3ms | ActiveRecord: 101.0ms | Allocations: 2380)
+
+
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Destroy (92.0ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 5]]
+Started GET "/lists" for ::1 at 2020-04-13 08:58:28 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.0ms | Allocations: 2102)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:02:14 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:10:40 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 2106)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:10:56 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:14:02 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:14:03 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:15:05 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:21:12 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.9ms | Allocations: 2106)
+
+
+Started POST "/items" for ::1 at 2020-04-13 09:21:20 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"Clean car", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1, "item"=>{"name"=>"Clean car", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1}}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Clean car"], ["status", "to_do"], ["list_id", 1], ["created_at", "2020-04-13 16:21:20.121270"], ["updated_at", "2020-04-13 16:21:20.121270"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 09:21:20 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (109.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 110.6ms | Allocations: 6250)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.8ms | Allocations: 2287)
+
+
+Started DELETE "/items/37" for ::1 at 2020-04-13 09:21:40 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (105.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 37]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 117ms (Views: 0.2ms | ActiveRecord: 106.2ms | Allocations: 2401)
+
+
+Started POST "/items" for ::1 at 2020-04-13 09:21:44 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"Clea", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1, "item"=>{"name"=>"Clea", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1}}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (4.1ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Clea"], ["status", "to_do"], ["list_id", 1], ["created_at", "2020-04-13 16:21:44.827359"], ["updated_at", "2020-04-13 16:21:44.827359"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (117.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 09:21:44 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+Completed 200 OK in 136ms (Views: 0.2ms | ActiveRecord: 122.4ms | Allocations: 5066)
+
+
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.4ms | Allocations: 2458)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:22:13 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.7ms | Allocations: 2250)
+
+
+Started DELETE "/items/38" for ::1 at 2020-04-13 09:22:23 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (79.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 38]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 88ms (Views: 0.3ms | ActiveRecord: 79.7ms | Allocations: 2401)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:52:14 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 1.4ms | Allocations: 2104)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:52:33 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 09:52:55 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:55:01 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 2105)
+
+
+Started POST "/lists" for ::1 at 2020-04-13 10:55:25 -0700
+Processing by ListsController#create as JSON
+  Parameters: {"name"=>"Work", "list"=>{"name"=>"Work"}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "Work"], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Work"], ["created_at", "2020-04-13 17:55:25.887001"], ["updated_at", "2020-04-13 17:55:25.887001"]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 10:55:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 6]]
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+Completed 200 OK in 121ms (Views: 7.4ms | ActiveRecord: 102.7ms | Allocations: 6936)
+
+
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 6]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 3363)
+
+
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Destroy (115.0ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 6]]
+Started GET "/lists" for ::1 at 2020-04-13 10:57:17 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 2067)
+
+
+Started POST "/lists" for ::1 at 2020-04-13 10:57:27 -0700
+Processing by ListsController#create as JSON
+  Parameters: {"name"=>"Work", "list"=>{"name"=>"Work"}}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "Work"], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Work"], ["created_at", "2020-04-13 17:57:27.020350"], ["updated_at", "2020-04-13 17:57:27.020350"]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (96.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+Started GET "/lists" for ::1 at 2020-04-13 10:57:27 -0700
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Completed 200 OK in 116ms (Views: 6.5ms | ActiveRecord: 97.9ms | Allocations: 5858)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 3129)
+
+
+Started POST "/items" for ::1 at 2020-04-13 10:57:31 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7, "item"=>{"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (1.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["status", "to_do"], ["list_id", 7], ["created_at", "2020-04-13 17:57:31.688954"], ["updated_at", "2020-04-13 17:57:31.688954"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (102.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 122ms (Views: 0.3ms | ActiveRecord: 104.1ms | Allocations: 4871)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:31 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 3301)
+
+
+Started POST "/items" for ::1 at 2020-04-13 10:57:33 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7, "item"=>{"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["status", "to_do"], ["list_id", 7], ["created_at", "2020-04-13 17:57:33.174256"], ["updated_at", "2020-04-13 17:57:33.174256"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (127.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 128.6ms | Allocations: 4864)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:33 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 3483)
+
+
+Started POST "/items" for ::1 at 2020-04-13 10:57:35 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7, "item"=>{"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["status", "to_do"], ["list_id", 7], ["created_at", "2020-04-13 17:57:35.281694"], ["updated_at", "2020-04-13 17:57:35.281694"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (123.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 138ms (Views: 0.2ms | ActiveRecord: 124.7ms | Allocations: 4748)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:35 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 3665)
+
+
+Started DELETE "/items/41" for ::1 at 2020-04-13 10:57:37 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (111.2ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 119ms (Views: 0.3ms | ActiveRecord: 111.5ms | Allocations: 2401)
+
+
+Started DELETE "/items/40" for ::1 at 2020-04-13 10:57:38 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (74.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 40]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 85ms (Views: 0.2ms | ActiveRecord: 74.7ms | Allocations: 2380)
+
+
+Started POST "/items" for ::1 at 2020-04-13 10:57:42 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"s", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7, "item"=>{"name"=>"s", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7}}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "s"], ["status", "to_do"], ["list_id", 7], ["created_at", "2020-04-13 17:57:42.088404"], ["updated_at", "2020-04-13 17:57:42.088404"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 122ms (Views: 0.1ms | ActiveRecord: 101.3ms | Allocations: 4741)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:42 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.2ms | Allocations: 3483)
+
+
+Started POST "/items" for ::1 at 2020-04-13 10:57:43 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"s", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7, "item"=>{"name"=>"s", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "s"], ["status", "to_do"], ["list_id", 7], ["created_at", "2020-04-13 17:57:43.796936"], ["updated_at", "2020-04-13 17:57:43.796936"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (112.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 131ms (Views: 0.2ms | ActiveRecord: 113.7ms | Allocations: 5046)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:43 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.6ms | Allocations: 3665)
+
+
+Started POST "/items" for ::1 at 2020-04-13 10:57:46 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7, "item"=>{"name"=>"a", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>7}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["status", "to_do"], ["list_id", 7], ["created_at", "2020-04-13 17:57:46.611693"], ["updated_at", "2020-04-13 17:57:46.611693"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (119.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 10:57:46 -0700
+Completed 200 OK in 141ms (Views: 0.2ms | ActiveRecord: 119.8ms | Allocations: 5053)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.7ms | Allocations: 3848)
+
+
+Started DELETE "/items/44" for ::1 at 2020-04-13 10:57:49 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"44"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (103.0ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 44]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 111ms (Views: 0.3ms | ActiveRecord: 103.4ms | Allocations: 2402)
+
+
+Started DELETE "/items/43" for ::1 at 2020-04-13 10:57:50 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (85.9ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 43]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 86.1ms | Allocations: 2380)
+
+
+Started DELETE "/items/42" for ::1 at 2020-04-13 10:57:50 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (88.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 42]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 94ms (Views: 0.1ms | ActiveRecord: 88.7ms | Allocations: 2381)
+
+
+Started DELETE "/items/39" for ::1 at 2020-04-13 10:57:51 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (94.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 39]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 102ms (Views: 0.2ms | ActiveRecord: 94.7ms | Allocations: 2380)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:54 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms | Allocations: 3119)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 10:57:55 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.5ms | Allocations: 3119)
+
+
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Destroy (124.2ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 7]]
+Started GET "/lists" for ::1 at 2020-04-13 11:01:14 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:01:15 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:14:28 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 2104)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:15:15 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:15:15 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 2067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:15:39 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 2067)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:15:52 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"Clean storage", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1, "item"=>{"name"=>"Clean storage", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>1}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Clean storage"], ["status", "to_do"], ["list_id", 1], ["created_at", "2020-04-13 18:15:52.784260"], ["updated_at", "2020-04-13 18:15:52.784260"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (106.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/lists" for ::1 at 2020-04-13 11:15:52 -0700
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 122ms (Views: 0.1ms | ActiveRecord: 107.5ms | Allocations: 5157)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 2286)
+
+
+Started DELETE "/items/45" for ::1 at 2020-04-13 11:16:04 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"45"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (84.8ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 45]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 90ms (Views: 0.1ms | ActiveRecord: 85.1ms | Allocations: 2401)
+
+
+Started POST "/lists" for ::1 at 2020-04-13 11:16:10 -0700
+Processing by ListsController#create as JSON
+  Parameters: {"name"=>"Work", "list"=>{"name"=>"Work"}}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "Work"], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Work"], ["created_at", "2020-04-13 18:16:10.964471"], ["updated_at", "2020-04-13 18:16:10.964471"]]
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+  [1m[35m (68.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:9:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 11:16:11 -0700
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Completed 200 OK in 86ms (Views: 3.7ms | ActiveRecord: 69.9ms | Allocations: 5692)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 3178)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:16:26 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"De", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8, "item"=>{"name"=>"De", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "De"], ["status", "to_do"], ["list_id", 8], ["created_at", "2020-04-13 18:16:26.032122"], ["updated_at", "2020-04-13 18:16:26.032122"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (117.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 11:16:26 -0700
+Completed 200 OK in 136ms (Views: 0.2ms | ActiveRecord: 118.8ms | Allocations: 5054)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 3302)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:16:29 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"asd", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8, "item"=>{"name"=>"asd", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8}}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (3.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "asd"], ["status", "to_do"], ["list_id", 8], ["created_at", "2020-04-13 18:16:29.287202"], ["updated_at", "2020-04-13 18:16:29.287202"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (104.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 123ms (Views: 0.1ms | ActiveRecord: 108.7ms | Allocations: 5067)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:16:29 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.6ms | Allocations: 3483)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:16:47 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"sdkjfgskd ksajdf kjsd ksjdfh sakjdfh", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8, "item"=>{"name"=>"sdkjfgskd ksajdf kjsd ksjdfh sakjdfh", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (1.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "sdkjfgskd ksajdf kjsd ksjdfh sakjdfh"], ["status", "to_do"], ["list_id", 8], ["created_at", "2020-04-13 18:16:47.627506"], ["updated_at", "2020-04-13 18:16:47.627506"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (103.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 120ms (Views: 0.2ms | ActiveRecord: 105.6ms | Allocations: 4745)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:16:47 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 3667)
+
+
+Started DELETE "/items/48" for ::1 at 2020-04-13 11:16:59 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"48"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (88.0ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 97ms (Views: 0.3ms | ActiveRecord: 88.2ms | Allocations: 2382)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:17:31 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"Woek kinf of lazy to do all ", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8, "item"=>{"name"=>"Woek kinf of lazy to do all ", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Woek kinf of lazy to do all "], ["status", "to_do"], ["list_id", 8], ["created_at", "2020-04-13 18:17:31.681117"], ["updated_at", "2020-04-13 18:17:31.681117"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (114.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 127ms (Views: 0.1ms | ActiveRecord: 115.3ms | Allocations: 4862)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:17:31 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 3667)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:17:56 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"put all the element to visualize and re", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8, "item"=>{"name"=>"put all the element to visualize and re", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8}}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "put all the element to visualize and re"], ["status", "to_do"], ["list_id", 8], ["created_at", "2020-04-13 18:17:56.966256"], ["updated_at", "2020-04-13 18:17:56.966256"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (138.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Started GET "/lists" for ::1 at 2020-04-13 11:17:57 -0700
+Completed 200 OK in 156ms (Views: 0.2ms | ActiveRecord: 138.8ms | Allocations: 4958)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 3853)
+
+
+Started DELETE "/items/49" for ::1 at 2020-04-13 11:18:03 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"49"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (122.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 49]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 131ms (Views: 0.2ms | ActiveRecord: 123.1ms | Allocations: 2403)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:22:54 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.5ms | Allocations: 3667)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:22:54 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 3670)
+
+
+Started DELETE "/items/50" for ::1 at 2020-04-13 11:22:58 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"50"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (56.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 50]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 67ms (Views: 0.3ms | ActiveRecord: 56.8ms | Allocations: 2382)
+
+
+Started DELETE "/items/47" for ::1 at 2020-04-13 11:22:59 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"47"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (84.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 47]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 90ms (Views: 0.1ms | ActiveRecord: 84.8ms | Allocations: 2381)
+
+
+Started DELETE "/items/46" for ::1 at 2020-04-13 11:23:00 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"46"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (83.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 46]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 91ms (Views: 0.3ms | ActiveRecord: 83.6ms | Allocations: 2381)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:23:03 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 3119)
+
+
+Started POST "/items" for ::1 at 2020-04-13 11:23:13 -0700
+Processing by ItemsController#create as JSON
+  Parameters: {"name"=>"as asdh adlkh asdi asldh asn lasdh l", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8, "item"=>{"name"=>"as asdh adlkh asdi asldh asn lasdh l", "status"=>"to_do", "priority"=>nil, "due_date"=>nil, "list_id"=>8}}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[36mItem Create (2.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "status", "list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "as asdh adlkh asdi asldh asn lasdh l"], ["status", "to_do"], ["list_id", 8], ["created_at", "2020-04-13 18:23:13.056015"], ["updated_at", "2020-04-13 18:23:13.056015"]]
+  ↳ app/controllers/items_controller.rb:5:in `create'
+  [1m[35m (107.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/lists" for ::1 at 2020-04-13 11:23:13 -0700
+  ↳ app/controllers/items_controller.rb:5:in `create'
+Completed 200 OK in 126ms (Views: 0.1ms | ActiveRecord: 110.5ms | Allocations: 5072)
+
+
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.5ms | Allocations: 3313)
+
+
+Started DELETE "/items/51" for ::1 at 2020-04-13 11:23:20 -0700
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `destroy'
+  [1m[36mItem Destroy (102.8ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 51]]
+  ↳ app/controllers/items_controller.rb:11:in `destroy'
+Completed 200 OK in 111ms (Views: 0.2ms | ActiveRecord: 102.9ms | Allocations: 2382)
+
+
+Started GET "/lists" for ::1 at 2020-04-13 11:23:29 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 3119)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Destroy (98.0ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 8]]
+Started GET "/lists" for ::1 at 2020-04-13 11:24:02 -0700
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 2067)
+
+
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]

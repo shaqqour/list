@@ -2,12 +2,22 @@ const BASE_URL = "http://localhost:3000";
 const LISTS_URL = `${BASE_URL}/lists`;
 const ITEMS_URL = `${BASE_URL}/items`;
 
-const span = document.getElementsByTagName("span")[0];
 const body = document.getElementsByTagName("body")[0];
 
 document.addEventListener("DOMContentLoaded", () => {
 
     //Create a new list
+    createNewListForm();
+    
+    fetch(LISTS_URL)
+    .then(response => response.json())
+    .then(json => render(json));
+});
+
+function createNewListForm() {
+    const span = document.createElement("span");
+    span.className = "createlist";
+    body.appendChild(span);
     const form = document.createElement("form");
     const newListTextfield = document.createElement("input");
     newListTextfield.type = "text";
@@ -16,17 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const createNewListButton = document.createElement("button");
     createNewListButton.type = "submit";
     createNewListButton.innerHTML = "Create List";
-    createNewListButton.addEventListener("click", function(e){
+    createNewListButton.addEventListener("click", function (e) {
         if (newListTextfield.value.length > 0) {
             addNewList(newListTextfield.value);
         }
     });
     form.appendChild(createNewListButton)
-    
-    fetch(LISTS_URL)
-    .then(response => response.json())
-    .then(json => render(json));
-});
+}
 
 function render(jsonObject) {
 
@@ -67,7 +73,7 @@ function addInfo(list) {
     addButton.addEventListener("click", function (e) {
         if (newItemTextfield.value.length > 0) {
             let item = list.createItem(newItemTextfield.value);
-            UpdateList(item);
+            updateList(item);
         }
     });
 
@@ -108,7 +114,7 @@ function addItem(item) {
     div.appendChild(ul);
 }
 
-function UpdateList(item) {
+function updateList(item) {
     let formData = {
         "name": item.name,
         "status": item.status,
