@@ -58,7 +58,7 @@ class List {
         const p = document.createElement("p");
         p.innerHTML = this.name + " list:";
         //add delete list button
-        addDeleteListButton(this);
+        this.addDeleteListButton();
         div.appendChild(p);
         
         //add textfield and button to add items to the list
@@ -141,6 +141,23 @@ class List {
         li.appendChild(doingButton);
         ul.appendChild(li);
         div.appendChild(ul);
+    }
+
+    addDeleteListButton() {
+        //to use inside the event listner
+        const list = this;
+        
+        const div = document.getElementById(this.id);
+        const deleteList = document.createElement("button");
+        deleteList.className = "delete";
+        deleteList.innerHTML = "Delete List"
+        div.appendChild(deleteList);
+
+        deleteList.addEventListener("click", function (e) {
+            list.removeList()
+            div.parentElement.remove();
+        });
+
     }
 
     removeList() {

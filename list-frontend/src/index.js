@@ -42,17 +42,3 @@ function render(jsonObject) {
     }
 
 }
-
-function addDeleteListButton(list) {
-    const div = document.getElementById(list.id);
-    const deleteList = document.createElement("button");
-    deleteList.className = "delete";
-    deleteList.innerHTML = "Delete List"
-    div.appendChild(deleteList);
-
-    deleteList.addEventListener("click", function(e) {
-        list.removeList()
-        div.parentElement.remove();
-    });
-
-}
