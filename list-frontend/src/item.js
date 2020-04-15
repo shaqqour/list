@@ -7,4 +7,9 @@ class Item {
         this.due_date = attributes.due_date;
         this.list_id = attributes.list_id;
     }
+
+    delete() {
+        let configObj = { method: "DELETE" };
+        fetch(ITEMS_URL + "/" + this.id, configObj);
+    }
 }
