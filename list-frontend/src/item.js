@@ -8,7 +8,7 @@ class Item {
         this.list_id = attributes.list_id;
     }
 
-    addToDOM() {
+    addToDoToDOM() {
         let item = this;
         //find the div and ul where the item will be added
         const div = document.getElementById(this.list_id)
@@ -20,7 +20,8 @@ class Item {
         doingButton.className = "doing";
         doingButton.innerHTML = "Doing";
         doingButton.addEventListener("click", function(e) {
-            item.moveItemToDoing();
+            item.changeItemStatusToDoing();
+            e.target.parentElement.remove();
         });
 
         //create the delete button in case the user want to delete the item
@@ -40,7 +41,19 @@ class Item {
         div.appendChild(ul);
     }
 
-    moveItemToDoing() {
+    addDoingToDOM() {
+        //find the div and ul where the item will be added
+        const div = document.getElementById(this.list_id + "doing");
+        const ul = div.lastChild;
+        const li = document.createElement("li");
+
+        li.innerHTML = this.name;
+        ul.appendChild(li);
+        div.appendChild(ul);
+
+    }
+
+    changeItemStatusToDoing() {
         let formData = {
             "status": "doing",
         };
@@ -54,7 +67,13 @@ class Item {
         };
         fetch(ITEMS_URL + "/" + this.id, configObj)
         .then(response => response.json())
-        .then(jsonObj => console.log(jsonObj));
+        .then(function (jsonItem) {
+            if (jsonItem.data.id) {
+                let item = new Item(jsonItem.data.attributes)
+                //add the item to the DOM
+                item.addDoingToDOM();
+            }
+        });
     }
 
     delete() {

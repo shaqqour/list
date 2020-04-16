@@ -42,8 +42,6 @@ class List {
     }
 
     buildList() {
-        //to use inside eventListner
-        const list = this;
         
         const main = document.createElement("main");
         body.appendChild(main);
@@ -60,15 +58,17 @@ class List {
         div_doing.className = "list doing";
         div_doing.id = this.id + "doing";
         main.appendChild(div_doing);
+        this.addDoingInfo(div_doing);
         
     }
 
     addToDoInfo(div) {
+        //to use inside the eventlistner
         const list = this;
 
         //add list name
         const p = document.createElement("p");
-        p.innerHTML = this.name + " list:";
+        p.innerHTML = this.name + " (to do):";
         //add delete list button
         this.addDeleteListButton();
         div.appendChild(p);
@@ -96,7 +96,25 @@ class List {
         div.appendChild(ul);
         for (const item of this.items) {
             if (item.status == "to_do") {
-                this.addItem(item);
+                item.addToDoToDOM();
+            }
+        }
+    }
+
+    addDoingInfo(div) {
+        const list = this;
+
+        //add list name
+        const p = document.createElement("p");
+        p.innerHTML = this.name + " (doing):";
+        div.appendChild(p);
+
+        //add exsiting list items
+        const ul = document.createElement('ul');
+        div.appendChild(ul);
+        for (const item of list.items) {
+            if (item.status == "doing") {
+                item.addDoingToDOM();
             }
         }
     }
@@ -123,13 +141,10 @@ class List {
         .then(function (jsonItem) {
             if (jsonItem.id) {
                 let item = new Item(jsonItem)
-                this.addItem(item);
+                //add the item to the DOM
+                item.addToDoToDOM();
             }
         });
-    }
-
-    addItem(item) {
-        item.addToDOM();
     }
 
     addDeleteListButton() {
