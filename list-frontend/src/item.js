@@ -19,6 +19,9 @@ class Item {
         const doingButton = document.createElement("button");
         doingButton.className = "doing";
         doingButton.innerHTML = "Doing";
+        doingButton.addEventListener("click", function(e) {
+            item.moveItemToDoing();
+        });
 
         //create the delete button in case the user want to delete the item
         const deleteButton = document.createElement("button");
@@ -35,6 +38,23 @@ class Item {
         li.appendChild(doingButton);
         ul.appendChild(li);
         div.appendChild(ul);
+    }
+
+    moveItemToDoing() {
+        let formData = {
+            "status": "doing",
+        };
+        let configObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(formData)
+        };
+        fetch(ITEMS_URL + "/" + this.id, configObj)
+        .then(response => response.json())
+        .then(jsonObj => console.log(jsonObj));
     }
 
     delete() {
