@@ -38,7 +38,7 @@ function render(jsonObject) {
 
     for (const lst of jsonObject.data) {
         let list = new List(lst.attributes);
-        list.addInfo();
+        list.buildList();
     }
 
 }

@@ -24,6 +24,16 @@ body {
   }
   
   div.list {
+    background-color: #88d2df;
+    height: auto;
+    width: 300px;
+    box-shadow: 10px 10px grey;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+  }
+
+  div.list.doing {
     background-color: #ebe839;
     height: auto;
     width: 300px;

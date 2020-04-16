@@ -41,26 +41,38 @@ class List {
         return new Item(attributes);
     }
 
-    addInfo() {
+    buildList() {
         //to use inside eventListner
         const list = this;
         
         const main = document.createElement("main");
         body.appendChild(main);
         
-        //create container
+        //create to_do containers
         const div = document.createElement("div");
         div.className = "list";
         div.id = this.id;
         main.appendChild(div);
+        this.addToDoInfo(div);
+
+        //create doing container
+        const div_doing = document.createElement("div");
+        div_doing.className = "list doing";
+        div_doing.id = this.id + "doing";
+        main.appendChild(div_doing);
         
+    }
+
+    addToDoInfo(div) {
+        const list = this;
+
         //add list name
         const p = document.createElement("p");
         p.innerHTML = this.name + " list:";
         //add delete list button
         this.addDeleteListButton();
         div.appendChild(p);
-        
+
         //add textfield and button to add items to the list
         const form = document.createElement("form");
         const newItemTextfield = document.createElement("input");
@@ -71,19 +83,21 @@ class List {
         addButton.type = "submit";
         addButton.innerHTML = "Add";
         form.appendChild(addButton)
-        
+
         addButton.addEventListener("click", function (e) {
             if (newItemTextfield.value.length > 0) {
                 let item = list.createItem(newItemTextfield.value);
                 list.updateList(item);
             }
         });
-        
+
         //add exsiting list items
         const ul = document.createElement('ul');
         div.appendChild(ul);
         for (const item of this.items) {
-            this.addItem(item);
+            if (item.status == "to_do") {
+                this.addItem(item);
+            }
         }
     }
 
