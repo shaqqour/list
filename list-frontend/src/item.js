@@ -10,6 +10,7 @@ class Item {
 
     addToDoToDOM() {
         let item = this;
+
         //find the div and ul where the item will be added
         const div = document.getElementById(this.list_id)
         const ul = div.lastChild;
@@ -42,12 +43,24 @@ class Item {
     }
 
     addDoingToDOM() {
+        let item = this;
+
         //find the div and ul where the item will be added
         const div = document.getElementById(this.list_id + "doing");
         const ul = div.lastChild;
         const li = document.createElement("li");
 
+        //create the done button to move it to the done list
+        const doneButton = document.createElement("button");
+        doneButton.className = "done";
+        doneButton.innerHTML = "Done";
+        doneButton.addEventListener("click", function (e) {
+            //item.changeItemStatusToDoing();
+            //e.target.parentElement.remove();
+        });
+
         li.innerHTML = this.name;
+        li.appendChild(doneButton);
         ul.appendChild(li);
         div.appendChild(ul);
 

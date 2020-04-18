@@ -71,6 +71,12 @@ body {
 
   button.doing {
     float: right;
+    color: rgb(80, 78, 78);
+    background-color: #ebe839;
+  }
+
+  button.done {
+    float: right;
     background-color: rgb(75, 225, 45);
   }
   
