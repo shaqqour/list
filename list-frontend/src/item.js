@@ -74,7 +74,17 @@ class Item {
         const ul = div.lastChild;
         const li = document.createElement("li");
 
+        //create the remove button
+        const removeButton = document.createElement("button");
+        removeButton.className = "delete";
+        removeButton.innerHTML = "Remove";
+        removeButton.addEventListener("click", function (e) {
+            item.delete();
+            e.target.parentElement.remove();
+        });
+
         li.innerHTML = this.name;
+        li.appendChild(removeButton);
         ul.appendChild(li);
         div.appendChild(ul);
 
