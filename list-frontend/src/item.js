@@ -55,12 +55,26 @@ class Item {
         doneButton.className = "done";
         doneButton.innerHTML = "Done";
         doneButton.addEventListener("click", function (e) {
-            //item.changeItemStatusToDoing();
-            //e.target.parentElement.remove();
+            item.changeItemStatusToDone();
+            e.target.parentElement.remove();
         });
 
         li.innerHTML = this.name;
         li.appendChild(doneButton);
+        ul.appendChild(li);
+        div.appendChild(ul);
+
+    }
+
+    addDoneToDOM() {
+        let item = this;
+
+        //find the div and ul where the item will be added
+        const div = document.getElementById(this.list_id + "done");
+        const ul = div.lastChild;
+        const li = document.createElement("li");
+
+        li.innerHTML = this.name;
         ul.appendChild(li);
         div.appendChild(ul);
 
@@ -87,6 +101,29 @@ class Item {
                 item.addDoingToDOM();
             }
         });
+    }
+
+    changeItemStatusToDone() {
+        let formData = {
+            "status": "done",
+        };
+        let configObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(formData)
+        };
+        fetch(ITEMS_URL + "/" + this.id, configObj)
+            .then(response => response.json())
+            .then(function (jsonItem) {
+                if (jsonItem.data.id) {
+                    let item = new Item(jsonItem.data.attributes)
+                    //add the item to the DOM
+                    item.addDoneToDOM();
+                }
+            });
     }
 
     delete() {

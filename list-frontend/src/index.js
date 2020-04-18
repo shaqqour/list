@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function createNewListForm() {
     const span = document.createElement("span");
+    span.innerHTML = "Create your lists here";
     span.className = "createlist";
     body.appendChild(span);
     const form = document.createElement("form");

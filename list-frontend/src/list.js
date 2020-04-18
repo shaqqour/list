@@ -59,6 +59,13 @@ class List {
         div_doing.id = this.id + "doing";
         main.appendChild(div_doing);
         this.addDoingInfo(div_doing);
+
+        //create done container
+        const div_done = document.createElement("div");
+        div_done.className = "list done";
+        div_done.id = this.id + "done";
+        main.appendChild(div_done);
+        this.addDoneInfo(div_done);
         
     }
 
@@ -91,7 +98,7 @@ class List {
             }
         });
 
-        //add exsiting list items
+        //add exsiting list to do items
         const ul = document.createElement('ul');
         div.appendChild(ul);
         for (const item of this.items) {
@@ -109,12 +116,30 @@ class List {
         p.innerHTML = this.name + " (doing):";
         div.appendChild(p);
 
-        //add exsiting list items
+        //add exsiting list doing items
         const ul = document.createElement('ul');
         div.appendChild(ul);
         for (const item of list.items) {
             if (item.status == "doing") {
                 item.addDoingToDOM();
+            }
+        }
+    }
+
+    addDoneInfo(div) {
+        const list = this;
+
+        //add list name
+        const p = document.createElement("p");
+        p.innerHTML = this.name + " (done):";
+        div.appendChild(p);
+
+        //add exsiting list done items
+        const ul = document.createElement('ul');
+        div.appendChild(ul);
+        for (const item of list.items) {
+            if (item.status == "done") {
+                item.addDoneToDOM();
             }
         }
     }
