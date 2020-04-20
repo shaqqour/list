@@ -1,87 +1,39 @@
-# To Do List
+# To-Do, Doing, Done List
 
-It is an open web application where users can create "To Do Lists" whether it is Personal, Work, or anything else. They can add tasks or items to the list to organize them by moving indiviual task, item to doing list version of the list that hold the items that the user start work on it
+It is an open web application where users can create "To Do Lists" whether it is Personal, Work, or anything else. They can add tasks or items to the "to-do list." Each task/item has three stages: to-do, doing and done. The user can organize them by moving indiviual task/item from the to-do stage to the doing and then to the done stage.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Fork this repo and clone it to your local machine. Run rails server on the back-end folder of this project and then open "index.html" file in your browser and start creating list and add tasks to them.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+ruby '2.5.1' and the gem 'rails', '~> 6.0.2', '>= 6.0.2.1' as the backend.
 
-```
-Give examples
-```
+gem 'sqlite3', '~> 1.4' as the database for Active Record
+
+gem 'puma', '~> 4.1' as the app server
+
+gem 'fast_jsonapi' for the controller to render json-api
+
+gem 'rack-cors' to handle cross-origin-resource-sharing
+
+gem 'byebug' for development and testing
+
 
 ### Installing
-
+1) Install ruby 2.5.1 and add the required gems.
+2) Run 'bundle install' in your terminal to install all the required gems.
+3) Navigate to the backend folder and run 'rails s' to start your server.
+4) Open index.html in your browser, chrom works best with this project.
 A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Shaqqour** - *Initial work* - [shaqqour](https://github.com/shaqqour)
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Thanks to FlatIron school for providing all the resources that is needed to build this project.
+* Special thanks to my cohort lead, Dalia Sawaya, who was there to answer any questions.
+* Background was taking from https://unsplash.com/s/photos/lukas-blazek
