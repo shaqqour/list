@@ -99,9 +99,11 @@ class List {
         form.appendChild(addButton)
 
         addButton.addEventListener("click", function (e) {
+            e.preventDefault();
             if (newItemTextfield.value.length > 0) {
                 let item = list.createItem(newItemTextfield.value);
                 list.updateList(item);
+                newItemTextfield.value = "";
             }
         });
 
@@ -171,8 +173,8 @@ class List {
         fetch(ITEMS_URL, configObj)
         .then(response => response.json())
         .then(function (jsonItem) {
-            if (jsonItem.id) {
-                let item = new Item(jsonItem)
+            if (jsonItem.data.attributes.id) {
+                let item = new Item(jsonItem.data.attributes)
                 //add the item to the DOM
                 item.addToDoToDOM();
             }
