@@ -77,9 +77,6 @@ class List {
     }
 
     addToDoInfo(div) {
-        //to use inside the eventlistner
-        const list = this;
-
         //add list name
         const p = document.createElement("p");
         p.innerHTML = this.name + " (to do):";
@@ -98,11 +95,11 @@ class List {
         addButton.innerHTML = "Add";
         form.appendChild(addButton)
 
-        addButton.addEventListener("click", function (e) {
+        addButton.addEventListener("click", (e) => {
             e.preventDefault();
             if (newItemTextfield.value.length > 0) {
-                let item = list.createItem(newItemTextfield.value);
-                list.updateList(item);
+                let item = this.createItem(newItemTextfield.value);
+                this.updateList(item);
                 newItemTextfield.value = "";
             }
         });
@@ -118,8 +115,6 @@ class List {
     }
 
     addDoingInfo(div) {
-        const list = this;
-
         //add list name
         const p = document.createElement("p");
         p.innerHTML = this.name + " (doing):";
@@ -128,7 +123,7 @@ class List {
         //add exsiting list doing items
         const ul = document.createElement('ul');
         div.appendChild(ul);
-        for (const item of list.items) {
+        for (const item of this.items) {
             if (item.status == "doing") {
                 item.addDoingToDOM();
             }
@@ -136,8 +131,6 @@ class List {
     }
 
     addDoneInfo(div) {
-        const list = this;
-
         //add list name
         const p = document.createElement("p");
         p.innerHTML = this.name + " (done):";
@@ -146,7 +139,7 @@ class List {
         //add exsiting list done items
         const ul = document.createElement('ul');
         div.appendChild(ul);
-        for (const item of list.items) {
+        for (const item of this.items) {
             if (item.status == "done") {
                 item.addDoneToDOM();
             }
@@ -182,20 +175,16 @@ class List {
     }
 
     addDeleteListButton() {
-        //to use inside the event listner
-        const list = this;
-        
         const div = document.getElementById(this.id);
         const deleteList = document.createElement("button");
         deleteList.className = "delete";
         deleteList.innerHTML = "Delete List"
         div.appendChild(deleteList);
 
-        deleteList.addEventListener("click", function (e) {
-            list.removeList()
+        deleteList.addEventListener("click", (e) => {
+            this.removeList()
             div.parentElement.remove();
         });
-
     }
 
     removeList() {

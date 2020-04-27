@@ -9,7 +9,6 @@ class Item {
     }
 
     addToDoToDOM() {
-        let item = this;
 
         //find the div and ul where the item will be added
         const div = document.getElementById(this.list_id)
@@ -20,8 +19,8 @@ class Item {
         const doingButton = document.createElement("button");
         doingButton.className = "doing";
         doingButton.innerHTML = "Doing";
-        doingButton.addEventListener("click", function(e) {
-            item.changeItemStatusToDoing();
+        doingButton.addEventListener("click", (e) => {
+            this.changeItemStatusToDoing();
             e.target.parentElement.remove();
         });
 
@@ -30,12 +29,12 @@ class Item {
         deleteButton.className = "delete";
         deleteButton.type = "submit";
         deleteButton.innerHTML = "Delete";
-        deleteButton.addEventListener("click", function (e) {
-            item.delete();
+        deleteButton.addEventListener("click", (e) => {
+            this.delete();
             e.target.parentElement.remove();
         });
 
-        li.innerHTML = item.name;
+        li.innerHTML = this.name;
         li.appendChild(deleteButton);
         li.appendChild(doingButton);
         ul.appendChild(li);
@@ -43,7 +42,6 @@ class Item {
     }
 
     addDoingToDOM() {
-        let item = this;
 
         //find the div and ul where the item will be added
         const div = document.getElementById(this.list_id + "doing");
@@ -54,8 +52,8 @@ class Item {
         const doneButton = document.createElement("button");
         doneButton.className = "done";
         doneButton.innerHTML = "Done";
-        doneButton.addEventListener("click", function (e) {
-            item.changeItemStatusToDone();
+        doneButton.addEventListener("click", (e) => {
+            this.changeItemStatusToDone();
             e.target.parentElement.remove();
         });
 
@@ -67,7 +65,6 @@ class Item {
     }
 
     addDoneToDOM() {
-        let item = this;
 
         //find the div and ul where the item will be added
         const div = document.getElementById(this.list_id + "done");
@@ -78,8 +75,8 @@ class Item {
         const removeButton = document.createElement("button");
         removeButton.className = "delete";
         removeButton.innerHTML = "Remove";
-        removeButton.addEventListener("click", function (e) {
-            item.delete();
+        removeButton.addEventListener("click", (e) => {
+            this.delete();
             e.target.parentElement.remove();
         });
 
