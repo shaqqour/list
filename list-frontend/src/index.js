@@ -28,8 +28,10 @@ function createNewListForm() {
     newListButton.type = "submit";
     newListButton.innerHTML = "Create List";
     newListButton.addEventListener("click", function (e) {
+        e.preventDefault();
         if (newListInput.value.length > 0) {
             List.create(newListInput.value);
+            newListInput.value = "";
         }
     });
     form.appendChild(newListButton)

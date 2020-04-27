@@ -19,14 +19,21 @@ class List {
             body: JSON.stringify(formData)
         };
         
-        fetch(LISTS_URL, configObj);
+        fetch(LISTS_URL, configObj)
+        .then(response => response.json())
+        .then(function(jsonObject) { 
+            let list = new List(jsonObject.data.attributes);
+            list.buildList();
+        });
     }
 
     createItems(items) {
         let itemsArray = []
-        items.forEach(itm => {
-            itemsArray.push(new Item(itm));
-        });
+        if(items) {
+            items.forEach(itm => {
+                itemsArray.push(new Item(itm));
+            });
+        }
         return itemsArray;
     }
 

@@ -6,7 +6,7 @@ class ListsController < ApplicationController
     end
 
     def create
-        list = List.find_or_create_by(name: params[:name])
+        list = List.create(name: params[:name])
         render json: ListSerializer.new(list)
     end
 
