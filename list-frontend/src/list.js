@@ -34,7 +34,7 @@ class List {
                 itemsArray.push(new Item(itm));
             });
         }
-        return itemsArray;
+        return itemsArray.sort(Item.compare);
     }
 
     createItem(name) {
